@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links - informações complementares</title>
+</head>
+
+<body>
+    <a href="url">link text</a><br>
+    <a href="https://www.w3schools.com/">Visit W3Schools.com!</a><br>
+
+    <!-- HTML Links - The target Attribute
+    * By default, the linked page will be displayed in the current browser window. To change this, you must specify another target for the link. The target attribute specifies where to open the linked document. The target attribute can have one of the following values:
+    _self - Default. Opens the document in the same window/tab as it was clicked
+    _blank - Opens the document in a new window or tab
+    _parent - Opens the document in the parent frame
+    _top - Opens the document in the full body of the window
+    Use target="_blank" to open the linked document in a new browser window or tab: -->
+
+    <a href="https://www.w3schools.com/" target="_blank">Visit W3Schools!</a><br>
+
+    <h2>Absolute URLs</h2>
+    <p><a href="https://www.w3.org/">W3C</a></p>
+    <p><a href="https://www.google.com/">Google</a></p>
+
+    <h2>Relative URLs</h2>
+    <p><a href="html_images.asp">HTML Images</a></p>
+    <p><a href="/css/default.asp">CSS Tutorial</a></p>
+
+    <!-- Use a image as a Link -->
+    <a href="default.asp">
+        <img src="smiley.gif" alt="HTML tutorial" style="width:42px;height:42px;">
+    </a>
+
+    <!-- Link to an Email Address -->
+    <a href="mailto:someone@example.com">Send email</a>
+
+    <!-- Button as a Link 
+    To use an HTML button as a link, you have to add some JavaScript code. JavaScript allows you to specify what happens at certain events, such as a click of a button-->
+    <button onclick="document.location='default.asp'">HTML Tutorial</button>
+
+    <!-- Link Titles -->
+    <a href="https://www.w3schools.com/html/" title="Go to W3Schools HTML section">Visit our HTML Tutorial</a>
+
+
+    <!-- https://www.w3schools.com/html/html_filepaths.asp  -->
+
+
+    <!-- Create a Bookmark in HTML -->
+    <p> First, use the id attribute to create a bookmark: id="C4">Chapter 4 </p>
+    <h2 id="C4">Chapter 4</h2>
+    <p>Then, add a link to the bookmark ("Jump to Chapter 4"), from within the same page:</p>
+    <a href="#C4">Jump to Chapter 4</a>
+    <p>You can also add a link to a bookmark on another page:</p>
+    <a href="html_demo.html#C4">Jump to Chapter 4</a>
+
+    <p><a href="#C4">Jump to Chapter 4</a></p>
+    <p><a href="#C10">Jump to Chapter 10</a></p>
+
+    <h2>Chapter 1</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2>Chapter 2</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2>Chapter 3</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2 id="C4">Chapter 4</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2>Chapter 5</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2>Chapter 6</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2>Chapter 7</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2>Chapter 8</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2>Chapter 9</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2 id="C10">Chapter 10</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2>Chapter 11</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2>Chapter 12</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2>Chapter 13</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2>Chapter 14</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2>Chapter 15</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2>Chapter 16</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2>Chapter 17</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2>Chapter 18</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2>Chapter 19</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2>Chapter 20</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <h2>Chapter 21</h2>
+    <p>This chapter explains ba bla bla</p>
+
+</body>
+
+</html>
+
+<!-- HTML Links 
+* Links are found in nearly all web pages. Links allow users to click their way from page to page. HTML links are hyperlinks. You can click on a link and jump to another document. When you move the mouse over a link, the mouse arrow will turn into a little hand. A link does not have to be text. A link can be an image or any other HTML element.
+* The HTML <a> tag defines a hyperlink. It has the following syntax: <a href="url">link text</a> The most important attribute of the <a> element is the href attribute, which indicates the link's destination. The link text is the part that will be visible to the reader. Clicking on the link text, will send the reader to the specified URL address. By default, links will appear as follows in all browsers:
+An unvisited link is underlined and blue
+A visited link is underlined and purple
+An active link is underlined and red
+Tip: Links can of course be styled with CSS, to get another look! -->

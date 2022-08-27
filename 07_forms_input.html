@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -9,7 +9,17 @@
 </head>
 
 <body>
-    <form action="process.php">
+    <h1> Formulários e Inputs</h1>
+    <p> Os formulários são elemento do HTML que nos permitem pedir dados ao usuário para, então, podermos validar e
+        processar. Para que os formulários funcionem são necessárias 3 instâncias: Capturar (HTML), Validar (JS +
+        Back-end), Processar (Back-end)
+    </p>
+    <p>Os atributos de "form" são "action" e "method".
+        ACTION define a rota em que será processada a informação capturada.
+        METHOD define como a informação será enviada. Na versão atual do HTML, há apenas dois valores possíveis: GET e
+        POST
+    </p>
+    <form action="/registro" method="POST">
         <!-- Text -->
         <div>
             <label for="name">Name</label><br>
@@ -17,16 +27,39 @@
             <!-- O id serve para quando você clicar no label o input acender -->
             <!-- O atributo "name" precisa ser o nome no servidor  -->
         </div>
+        <div>
+            <p>
+                O elemento INPUT é multifuncional. Alterando o valor do atributo type, podemos obter diferentes tipos de
+                campos. O atributo name identifica o campo e o diferencia dos demais campos. É importante saber que os
+                elemento que não têm name não serão enviados. A largura padrão do campo de input é de 20 caracteres.
+            </p>
+            <input type="text" id="name" name="usuario">
+            <input type="password" name="senha">
+            <input type="tel" name="telefone">
+            <input type="number" name="idade">
+        </div>
+        <br>
         <!-- Email -->
         <div>
             <label for="email">Email</label><br>
             <input type="email" name="email" id="email" placeholder="Enter your email">
         </div>
+        <br>
+        <p> O elemento label serve para associar um texto descritivo a um determinado campo.
+            * FOR associa o label com um campo através da sua propriedade id.
+            * CONTEÚDO contém o texto que será exibido e indica as informações que o usuário deve preencher no campo.
+            * ID DO CAMPO serve para que o label seja associado, o campo que queremos associar deve possuir um id com o
+            mesmo valor usado no for
+            * LABEL, em geral, cada campo ou grupo terá seu próprio label associado. Quando o usuário clicar no label,
+            será ativado automaticamente o campo ao qual ele corresponde; ajudando aqueles que tem dificuldade em clicar
+            em regiões pequenas. O label também é muito útil para os usuários de leitores de tela, porque o leitor irá
+            leer em voz alta o valor contido no label quando o usuário focar no elemento input.</p>
         <!-- Textarea -->
         <div>
             <label for="message">Message</label> <br>
             <textarea name="message" id="message" cols="50" rows="5"></textarea>
         </div>
+        <br>
         <!-- Select -->
         <div>
             <label for="sex">Sex</label>
@@ -35,36 +68,87 @@
                 <option value="female" selected>Female</option>
             </select>
         </div>
+        <br>
         <!-- Number -->
         <div>
             <label for="age">Age</label><br>
             <input type="number" name="age" id="age">
         </div>
+        <br>
         <!-- Date -->
+        <h2>Data </h2>
+        <p> Dentro dos atributos do elemento, a data sempre é formatada como aaaa-mm-dd, por exemplo, 2022-03-08. Por
+            fora, ela terá o formato que corresponde ao idioma do ususário. Também é possível definir uma data minima
+            "min" que pode ser escolhida. Ou um data máxima "máxima".</p>
         <div>
             <label for="birthdate">Birthdate</label> <br>
             <input type="date" name="birthdate" id="birthdate">
         </div>
+        <br>
+        <div>
+            <label for="reserva">Data da Reserva</label> <br>
+            <input type="date" name="reserva" id="reserva" min="2022-08-25" max="2022-12-31">
+        </div>
+        <br>
         <!-- Radio -->
+        <h2>Type Radio</h2>
+        <p> Representa UMA opção selecionavel com um clique. Para criar o tipo radio, usamos o input cujo atributo type
+            tenha valor radio. É possível agrupar os elementos radio, mas o susário só poderá escolher uma opção dentre
+            eles. Para agrupar, é só declarar o mesmo valor para o atributo name em todos os elementos. Para que uma
+            opção apareça pré-selecionada é só usar o atributo "checked"</p>
         <div>
             <label for="membership">Membership</label>
             <input type="radio" name="membership" value="simple" id="membership"> Simple
             <input type="radio" name="membership" value="standard" id="membership" checked> Standard
             <input type="radio" name="membership" value="super" id="membership"> Super
         </div>
+        <br>
         <!-- Checkbox -->
+        <h2>Type Checkbox</h2>
+        <p>Representa uma opção que ao clicar será selecionada, e clicando duas vezes a seleção é anulada. Para criar um
+            checkbox usa-se um inpout cujo atributo type tenha valor checkbox. É possível agrupar elementos do tipo
+            checkbox, e o susário poderá selecionar mais d euma opção. Para agrupa-los, todos os elementos devem ter o
+            mesmo atributo name. </p><br>
         <div>
             <label for="membership">I like...</label>
             <input type="checkbox" name="likes" value="bike" id="likes"> Bike
             <input type="checkbox" name="likes" value="car" id="likes"> Car
             <input type="checkbox" name="likes" value="boat" id="likes"> Boat
         </div>
+        <p> Também pode ser usado para coletas informações que respondem a perguntas simples do tipo sim/não ou V/F.
+            Nesse caso, não é necessário atribuir valor, já que, se a opção for selecionada será enviado o valor "on".
+        </p>
+        <div>
+            <label for="termos"> Aceito os termos </label>
+            <input type="checkbox" name="termos">
+            <label for="newsletter"> Quero assinar a newsletter! </label>
+            <input type="checkbox" name="newsletter">
+        </div>
+
+        <br>
         <!-- Input submit -->
+        <h2> The Submit Button</h2>
+        <p> O input type submit define um botão para submeter o formulário para um manipulador de formulário, o form-handler. O form-handler é normalmente um arquivo no servidor com um script para processamento de input de dados. Ele é especificado no atributo "action" do form.</p>
+
+        <form action="/action_page.php">
+            <label for="fname">First name:</label><br>
+            <input type="text" id="fname" name="fname" value="John"><br>
+            <label for="lname">Last name:</label><br>
+            <input type="text" id="lname" name="lname" value="Doe"><br><br>
+            <input type="submit" value="Submit">
+        </form>
+
+        <br>
         <input type="submit" value="Submit">
-        <!-- Button Submit -->
-        <button type="submit"> Submit</button>
+        <!-- Button Submit -  O button tem mais flexibilidade para trabalhar nas CSS -->
+        <button type="submit"> Enviar</button>
         <button type="reset"> Reset</button>
     </form>
 </body>
 
 </html>
+
+<!-- Single or Double Quotes? In some situations, when the attribute value itself contains double quotes, it is necessary to use single quotes: 
+    <p title='John "ShotGun" Nelson'>  
+    Or vice versa:
+    <p title="John 'ShotGun' Nelson">-->
