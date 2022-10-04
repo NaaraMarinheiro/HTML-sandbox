@@ -18,8 +18,20 @@
         ACTION define a rota em que será processada a informação capturada.
         METHOD define como a informação será enviada. Na versão atual do HTML, há apenas dois valores possíveis: GET e
         POST
+        Observações sobre GET:
+        Anexa os dados do formulário à URL, em pares nome/valor. NUNCA use GET para enviar dados confidenciais! (os
+        dados do formulário enviado são visíveis na URL!). O comprimento de um URL é limitado (2048 caracteres). Útil
+        para envios de formulários em que um usuário deseja marcar o resultado GET é bom para dados não seguros, como
+        strings de consulta no Google.
+
+        Observações sobre o POST: Anexa os dados do formulário dentro do corpo da solicitação HTTP (os dados do
+        formulário enviado não são mostrados na URL). O POST não tem limitações de tamanho e pode ser usado para enviar
+        grandes quantidades de dados. Envios de formulários com POST não podem ser marcados.
+
+        Dica: Sempre use POST se os dados do formulário contiverem informações confidenciais ou pessoais!
+
     </p>
-    <form action="/registro" method="POST">
+    <form action="/registro" method="get">
         <!-- Text -->
         <div>
             <label for="name">Name</label><br>
@@ -60,15 +72,37 @@
             <textarea name="message" id="message" cols="50" rows="5"></textarea>
         </div>
         <br>
-        <!-- Select -->
+        <!-- Select - define uma lista com dropdown-->
         <div>
             <label for="sex">Sex</label>
-            <select name="sex" id="sex">
+            <select name="sex" id="sex" size="2">
                 <option value="male">Male</option>
                 <option value="female" selected>Female</option>
+                <option value="outro">Outro</option>
             </select>
         </div>
         <br>
+
+        <p>Use the multiple attribute to allow the user to select more than one value.</p>
+
+        <form action="/action_page.php">
+            <label for="cars">Choose a car:</label>
+            <select id="cars" name="cars" size="4" multiple>
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="fiat">Fiat</option>
+                <option value="audi">Audi</option>
+            </select><br><br>
+            <input type="submit">
+        </form>
+
+        <p>Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.</p>
+
+        <h2>HTML Input types</h2>
+        <p>button, checkbox, color, date, datetime-local, email, file, hidden, image, month, number, password, radio, range, reset, search, submit, tel, text, time, url, week   </p>
+        <p> Input Restrições: checked, disabled, max, maxlength, min, pattern, readonly, required, size, step, value  </p>
+
+
         <!-- Number -->
         <div>
             <label for="age">Age</label><br>
@@ -87,7 +121,7 @@
         <br>
         <div>
             <label for="reserva">Data da Reserva</label> <br>
-            <input type="date" name="reserva" id="reserva" min="2022-08-25" max="2022-12-31">
+            <input type="datetime-local" name="reserva" id="reserva" min="2022-08-25" max="2022-12-31">
         </div>
         <br>
         <!-- Radio -->
@@ -128,7 +162,9 @@
         <br>
         <!-- Input submit -->
         <h2> The Submit Button</h2>
-        <p> O input type submit define um botão para submeter o formulário para um manipulador de formulário, o form-handler. O form-handler é normalmente um arquivo no servidor com um script para processamento de input de dados. Ele é especificado no atributo "action" do form.</p>
+        <p> O input type submit define um botão para submeter o formulário para um manipulador de formulário, o
+            form-handler. O form-handler é normalmente um arquivo no servidor com um script para processamento de input
+            de dados. Ele é especificado no atributo "action" do form.</p>
 
         <form action="/action_page.php">
             <label for="fname">First name:</label><br>
@@ -138,12 +174,91 @@
             <input type="submit" value="Submit">
         </form>
 
+        <h2> O atributo TARGET</h2>
+        <p> O atributo target especifica onde será exibida a resposta recebida após o envio do formulário.
+            Ele pode ter um dos seguintes valores:
+            "_blank" = A resposta é mostrada em uma nova janela oui aba.
+            "_self" = A resposta é exibida na janela atual.
+            "_parent" = A resposta é exibida no frame principal.
+            "_top" = A resposta é exibida em todo o corpo da janela.
+            "framename" = A resposta é exibida em um quadro nomeado.
+        </p>
+
+        <form action="/action_page.php" target="_blank">
+            <label for="fname">First name:</label><br>
+            <input type="text" id="fname" name="fname" value="John"><br>
+            <label for="lname">Last name:</label><br>
+            <input type="text" id="lname" name="lname" value="Doe"><br><br>
+            <input type="submit" value="Submit">
+        </form>
+
+        <h2>Grouping Form Data with Fieldset</h2>
+
+        <p>O fieldset elemento é usado para agrupar dados relacionados em um formulário. O legend elemento define uma
+            legenda para o fieldset.</p>
+
+        <form action="/action_page.php">
+            <fieldset>
+                <legend>Personalia:</legend>
+                <label for="fname">First name:</label><br>
+                <input type="text" id="fname" name="fname" value="John"><br>
+                <label for="lname">Last name:</label><br>
+                <input type="text" id="lname" name="lname" value="Doe"><br><br>
+                <input type="submit" value="Submit">
+            </fieldset>
+        </form>
+        <br>
+        <h2>The datalist Element</h2>
+
+        <p>Especifica uma lista de opções predefinidas para um elemento input elemento. Os usuários verão uma lista
+            suspensa das opções predefinidas à medida que inserem dados. O atributo "list" do "input" deve se referir ao
+            id do "datalist". </p>
+
+        <form action="/action_page.php">
+            <input list="browsers" name="browser">
+            <datalist id="browsers">
+                <option value="Internet Explorer">
+                <option value="Firefox">
+                <option value="Chrome">
+                <option value="Opera">
+                <option value="Safari">
+            </datalist>
+            <input type="submit">
+        </form>
+        <br>
+
+        <h2>The output Element</h2>
+        <p>The output element represents the result of a calculation.</p>
+
+        <form action="/action_page.php" oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+            0
+            <input type="range" id="a" name="a" value="50">
+            100 +
+            <input type="number" id="b" name="b" value="50">
+            =
+            <output name="x" for="a b"></output>
+            <br><br>
+            <input type="submit">
+        </form>
+        <p><strong>Note:</strong> The output element is not supported in Edge prior version 13.</p>
         <br>
         <input type="submit" value="Submit">
         <!-- Button Submit -  O button tem mais flexibilidade para trabalhar nas CSS -->
         <button type="submit"> Enviar</button>
         <button type="reset"> Reset</button>
+        <button type="button" onclick="alert('Hello World!')">Click Me!</button>
     </form>
+
+    <h2> Preenchimento automático</h2>
+    <p> <strong> Preenchimento automático </strong>- O autocompleteatributo especifica se um formulário deve ter o
+        preenchimento automático ativado ou desativado. Quando o preenchimento automático está ativado, o navegador
+        completa automaticamente os valores com base nos valores que o usuário inseriu anteriormente. -- "form
+        action="/action_page.php" autocomplete="on"" -- </p>
+    <p> <strong> Atributo Novalidate </strong> - O novalidateatributo é um atributo booleano. Quando presente,
+        especifica que os dados do formulário (entrada) não devem ser validados quando enviados. -- form
+        action="/action_page.php" novalidate -- </p>
+
+
 </body>
 
 </html>

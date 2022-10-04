@@ -1,23 +1,84 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset ="UTF-8">
+    <meta charset="UTF-8">
+    <!-- Abreviatura de 8-bit Unicode Transformation Format, é a codificação de caracteres padrão usada com a versão mais recente do HTML, que é o HTML5. Essa linha deve ser incluída em todas as páginas da Web criadas, pois garante que todos os caracteres de todos os idiomas do mundo sejam exibidos corretamente em todos os navegadores.-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Essa tag garantirá que o site não seja renderizado como uma versão mais antiga do Internet Explorer, que costuma apresentar bugs. -->
     <meta name="viewport" content="width= , initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+    <!-- viewportrefere-se a como o site é exibido em diferentes tamanhos de tela e quanta área visual um usuário tem disponível. -->
+    <meta name="author" content="José da Silva">
+    <!-- AUTHOR: Serve para identificar qual o nome do autor da página, geralmente o desenvolver ou a empresa desenvolvedora. -->
+    <meta http-equiv="cache-control" content="no-cache" />
+    <!-- CACHE-CONTROL: Essa tag é utilizada no com o tipo “http-equiv” e é reconhecida apenas pelo http 1.1, e no seu atributo “content” (onde fica o conteúdo da tag) é permitido os seguintes valores: Public: Os dados da página podem ser armazenados de forma compartilhada, isto é, será utilizado por diferentes usuários de um mesmo browser. Private: É o contrário de public, o cache é armazenado para um específico usuário. No-Cache: A página não é armazenada em Cache. No-Store: É feito um cache temporário, a página não é arquivada. -->
+    <meta http-equiv="content-language" content="pt-br, en-US, fr" />
+    <!-- CONTENT-LANGUAGE: Utilizado para declarar as linguagens utilizadas no conteúdo da página. Esse atributo é útil para categorizar a página conforme o idioma. Este é utilizado em conjunto com o tipo “http-equiv”. -->
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <!-- CONTENT-TYPE: Esta tag é uma das mais importantes e jamais deve ser esquecida pois ela define qual o tipo de conteúdo que a página contém e qual a codificação deste conteúdo. Assim fica fácil saber se iremos abrir uma página HTML ou um arquivo PDF. -->
+    <meta name="copyright" content="© 2019 DevMedia"/>
+    <meta name="description" content="Ao escrever uma meta tag, use entre 140 e 160 caracteres para que o Google possa exibir toda a sua mensagem. Não se esqueça de incluir sua palavra-chave!"/>
+    <meta name="keywords" content="devmedia, artigo, metatag, html">
+    <meta http-equiv="refresh" content="15;url=http://www.thechessman.org" />
+    <!-- REFRESH: Especifica o tempo em segundos para que o browser atualize a página de forma automática, pode-se também redirecionar para uma outra URL após esse tempo. -->
+    <meta name="robots" content="all">
+    <meta name="robots" content="index,nofollow"> 
+    <meta name="robots" content="noindex,follow">
+    <meta name="robots" content="none">
     
+    <!-- ROBOTS: Especifica informações para que o robô possa indexar sua página, suporta os seguintes valores:
+
+All: Valor default, significa vazio, o robô de busca não recebe nenhuma informação.
+Index: Os robôs de busca podem incluir a página normalmente.
+Follow: Robôs podem indexar a página e ainda seguir os links para outras páginas que ela contém.
+NoIndex:Os links podem ser seguidos, mas a página não é indexada.
+NoFollow: A página é indexada, mas os links não são seguidos.
+None: Os robôs podem ignorar a página.
+NoArchive (Apenas Google): A página não é arquivada. -->
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta name="googlebot" content="noarchive">
+    <meta http-equiv="imagetoolbar" content="no" />
+    <meta name="generator" content="Dreamweaver 8" />
+    <meta name="revisit-after" content="15 days" />
+    <meta name="rating" content="general" />
+    <link rel="canonical" href= "endereço-do-site/institucional"/>.    
+
+    <title> Meta-tags</title>
+</head>
+
+<body>
+    <h1> Tipos de Meta Tags</h1>
+    <br>
+    <h2>HTTP-equiv</h2>
+    <p> é utilizado para controlar as ações do browser, e também espeficiam melhor as informações, sendo que estas tem
+        efeito equivalente quando são usadas diretamente na tag HTTP do cabeçalho.</p>
+    <h3>Name</h3>
+    <p>"Meta tags com o atributo “name” são utilizadas quando os tipos não correspondem com o HTTP, ou seja, aquilo que
+        não se adequar ao HTTP-EQUIV é utilizado no NAME. Mas alguns buscadores não chegam a fazer distinção sobre esses
+        tipos de tags, por exemplo: A meta tag “keywords” pode ser utilizada tanto com o tipo “http-equiv” como o tipo
+        “name”."</p>
+    <h3>Dublin Core</h3>
+    <p>Linguagem de meta tags própria, quepermite maior flebilidade </p>
 </body>
+
 </html>
+
+<!-- fonte: https://www.devmedia.com.br/html-meta-tags-entendendo-o-uso-de-meta-tags/30328 -->
+
+
+
+
+
+
+
+
 
 <!-- You should always include the lang attribute inside the <html> tag, to declare the language of the Web     page. This is meant to assist search engines and browsers. 
 Country codes can also be added to the language code in the lang attribute. So, the first two characters define the language of the HTML page, and the last two characters define the country.
 The following example specifies English as the language and United States as the country.
 The title attribute defines some extra information about an element. The value of the title attribute will be displayed as a tooltip when you mouse over the element. -->
 
- <!-- Estrutura do código
+<!-- Estrutura do código
     ___"meta" -> Etiqueta = permite definir propriedades da página que não podem ser definidas em outras etiquetas como <title>, <link> ou <style>. São geralmente dados sobre o conteúdo, su descrição, autor, caracteres, etc.  
     ___"charset" -> Atributo = permite definir a codificação de caracteres a utilizar. HTML fucniona por 'default' em iinglês, quando queremos utilizar caracteres de outrso idiomas, devemos especificá-los."
     __ "utf-8" -> valor = o padrão unicode (UTF-8) foi projetado para pemritir a exibição correta dos caracteres usados pela maioria dos idiomas e disciplinas técnicas no mundo moderno.-->
-

@@ -1,49 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Div, span, id and class</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Div, span, id, class e atributos globais</title>
     <style>
-        .card {
-            border: 1px solid #ccc;
-            background: #f4f4f4;
-            padding: 20px;
-            margin-bottom: 10px;
-        }
-        .enhance {
-            color:yellow;
-            background-color:black;
-        }
+      .card {
+        border: 1px solid #ccc;
+        background: #f4f4f4;
+        padding: 20px;
+        margin-bottom: 10px;
+      }
+      .enhance {
+        color: yellow;
+        background-color: black;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <!-- Atributos Globais podem ser utilizados em todas as tags, mas nem todas as tags vão fucnionar com atributos globais. Os mais utilizados: class, contenteditable, data-*, hidden, id, style, tabindex, title -->
+    <!-- Usamos as classes pra aplicar estilo CSS e para usar o JS também -->
     <div id="main-header" class="card">
-        <h1>My website</h1>
-        <p> A site about me</p>
+      <h1>My website</h1>
+      <p>A site about me</p>
     </div>
+    <!-- Tabindex - facilitador de navegador pelo teclado com tab -->
     <ul id="main-nav">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
+      <li><a href="#" tabindex="1">Home</a></li>
+      <li><a href="#" tabindex="2">About</a></li>
+      <li><a href="#" tabindex="3">Contact</a></li>
     </ul>
     <div id="about" class="card">
-        <h3>About</h3>
-        <p>Lorem ipsum dolor sit amet consectetur <span class="enhance"> adipisicing elit. </span> Sapiente, eveniet nostrum facere esse explicabo molestias nulla voluptatem dolorem perferendis temporibus.</p>
+      <h3>About</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur
+        <span class="enhance"> adipisicing elit. </span> Sapiente, eveniet
+        nostrum facere esse explicabo molestias nulla voluptatem dolorem
+        perferendis temporibus.
+      </p>
     </div>
-    <div id="contact" class="card">
-        <h3>Contact me</h3>
-        <ul>
-            <li>Address</li>
-            <li>Phone</li>
-            <li>Email</li>
-        </ul>
+    <!-- Contenteditable torna o conteúdo editável -->
+    <div id="contact" class="card" contenteditable="true">
+      <h3>Contact me</h3>
+      <ul>
+        <li>Address</li>
+        <li>Phone</li>
+        <li>Email</li>
+      </ul>
     </div>
-    <div id="footer">
-        <p>Copyright 2022</p>
+    <!-- hidden Esconde uma tag -->
+    <div id="footer" hidden>
+      <p>Copyright 2022</p>
     </div>
-</body>
+  </body>
 </html>
 <!-- Não há diferença funcional entre id e classe, mas o ideal é que você use ids quando o elemento é único, e classes para elementos que se repetem. Não repita IDs, pelo menos não na mesma página. -->
 <!-- Div é um elemento em bloco, enquanto sapan é um elemento inline -->
